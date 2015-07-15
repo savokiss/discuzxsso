@@ -39,7 +39,7 @@
 4. 在Ucenter中添加应用，具体参考[mediawiki官方文档](http://www.mediawiki.org/wiki/Extension:Discuz_X_Single_Sign-On)
 5. Ucenter数据库配置和cookie配置需修改`config.inc.php`，可参考discuz的`config_global.php`
 6. 权限配置，修改`config.inc.php`中定义的`GP_`常量用于用户组归类
-7. 修改wiki目录/includes/specials/SpecialUserLogin.php，第900行`return self::SUCCESS;`之前添加如下代码：
+7. 修改wiki目录/includes/specials/SpecialUserLogin.php，在`attemptAutoCreate`方法最后一行的`return self::SUCCESS;`之前添加如下代码：
 	
 		echo "<script>location.reload();</script>";//解决新用户第一次登录wiki白板问题
 
